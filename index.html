@@ -34,7 +34,7 @@
   </head>
   <body>
     <header id="header">
-      <img class="header__logo" src="images/logo.svg" />
+      <img class="header__logo" src="images/logo.svg" alt="logo" />
     </header>
     <section class="email-verification-success-message">
       <p>Thank you for subscribing!</p>
@@ -42,7 +42,7 @@
     </section>
     <main class="section-form">
       <h1 class="form__title">We are launching <span>soon!</span></h1>
-      <p class="form__subtitle">Subscribe and get notified</p>
+      <h2 class="form__subtitle">Subscribe and get notified</h2>
       <form class="form" id="form">
         <div class="form__input">
           <input
@@ -55,7 +55,12 @@
             Please provide a valid email address
           </small>
         </div>
-        <a class="btn btn-submit" id="btn-submit">Notify Me</a>
+        <a
+          class="btn btn-submit"
+          id="btn-submit"
+          aria-label="Click to subscribe"
+          >Notify Me</a
+        >
       </form>
     </main>
     <section class="image">
@@ -68,17 +73,26 @@
     <footer id="footer">
       <ul class="footer__social">
         <li>
-          <a class="footer__social--link" href="#"
+          <a
+            class="footer__social--link"
+            href="#"
+            aria-label="click to be redirected to the facebook site"
             ><i class="fab fa-facebook-f"></i
           ></a>
         </li>
         <li>
-          <a class="footer__social--link" href="#"
+          <a
+            class="footer__social--link"
+            href="#"
+            aria-label="click to be redirected to the twitter site"
             ><i class="fab fa-twitter"></i
           ></a>
         </li>
         <li>
-          <a class="footer__social--link" href="#"
+          <a
+            class="footer__social--link"
+            href="#"
+            aria-label="click to be redirected to the instagram site"
             ><i class="fab fa-instagram"></i
           ></a>
         </li>
