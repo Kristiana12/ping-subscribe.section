@@ -1,5 +1,11 @@
 const email = document.getElementById('email');
 const btnSubmit = document.getElementById('btn-submit');
+const form = document.getElementById('form');
+
+//prevent form from submitting
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+});
 
 //Check if email is valid
 const isEmail = (email) =>
@@ -7,7 +13,7 @@ const isEmail = (email) =>
     email
   );
 
-btnSubmit.addEventListener('click', () => {
+btnSubmit.addEventListener('click', (e) => {
   const form = document.querySelector('.form');
   const sectionForm = document.querySelector('.section-form');
   const subscribeSuccesMessage = document.querySelector(
@@ -17,13 +23,16 @@ btnSubmit.addEventListener('click', () => {
   const userEmailValue = email.value;
   if (userEmailValue === '') {
     form.classList.add('error');
-    email.setAttribute('placeholder', 'example@email/com');
+    email.setAttribute('placeholder', 'example@email.com');
+    email.setAttribute('aria-invalid', 'true');
   } else if (!isEmail(userEmailValue)) {
     form.classList.add('error');
     email.value = '';
-    email.setAttribute('placeholder', 'example@email/com');
+    email.setAttribute('placeholder', 'example@email.com');
+    email.setAttribute('aria-invalid', 'spelling');
   } else {
     sectionForm.style.display = 'none';
     subscribeSuccesMessage.style.display = 'block';
+    email.setAttribute('aria-invalid', 'false');
   }
 });
